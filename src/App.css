@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Coiny')
+
+
+.App {
+  text-align: center;
+}
+/* 
+* {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */
+
+:root{
+  --cloud:#ecf0f1
+}
+
+*{
+  overflow-x:hidden;
+  text-decoration:none;
+  text-align:center;
+  font-family:"Ubuntu",sans-serif;
+  color:var(--cloud)
+}
+
+a{
+  color:var(--cloud);
+  animation-name:"greying";
+  animation-duration:0.3s;
+  animation-fill-mode: forwards;
+  border:2px var(--cloud) solid;
+  border-radius:4px
+}
+#container{
+  margin:0;
+  padding:0;
+  width:100vw;
+  height:40vh;
+  margin-top:80px; 
+  color:#ecf0f1;
+  font-family:"Roboto", sans-serif;
+  background:linear-gradient(90deg, #3C385C 10%, #2A2641 90%);
+  border-top:4px solid #172345;
+  border-bottom:4px solid #172345;
+  display:flex;
+  flex-direction:column;
+
+
+
+ /* HOVER OFF */
+  -webkit-transition: height 1s;
+
+}
+
+#container:hover{
+  height:75vh;
+  
+   /* HOVER ON */
+    -webkit-transition: height 1s;
+    transition-delay:0.3s
+  }
+#container:hover >.movieCard--visible img{
+  height:37vh;
+  -webkit-transition:1s;
+  transition-delay:0.3s
+}
+
+/*////////////// movie-card visible /////////////////*/
+
+.movieCard--visible{
+  display:flex;
+  flex-direction: row;
+  position:relative;
+  left:0;
+  float:right;
+  width:80vw;
+  height:42vh;
+  justify-content:space-between;
+  margin-top:14px;
+  margin-left:350px;
+  overflow-y:hidden
+}
+.movieCard--visible:hover +.movieCard--volatile {
+  visibility: visible;
+  opacity:0;
+  animation-name:"vizz";
+  animation-delay:0.3s;
+  animation-duration:0.7s;
+  animation-fill-mode: forwards;
+  background-color: rgba(0,0,0,0.5);
+  overflow-y:hidden;
+ 
+}
+
+@keyframes vizz{
+  0%{opacity:0; height:0}
+  100%{opacity:1; height:32.11vh;}
+}
+
+
+
+
+.movieCard--visible--mainInfo{
+  text-decoration:none;
+  list-style:none;
+  display:flex;
+  flex-direction: column;
+  width:60%;
+  margin-left:30px;
+  margin-right:100px;
+  margin-top:20px;
+  
+}
+.movieCard--visible--ratings{
+  margin-right:30px;
+  width:400px;
+  line-height: 3;
+  font-size:20px;
+
+}
+.movieCard--visible--mainInfo h1,h2,h3,h4{
+  font-size:22px;
+  justify-content: center;
+  text-align: center;
+
+ 
+}
+
+
+.movieCard--visible img{
+top:0;
+left:0;
+height:20vh;
+-webkit-transition: height 1s;
+transition-delay: 0.4s;
+border:4px white solid;
+border-radius:4px;
+margin-top:30px;
+margin-bottom:30px
+}
+
+ 
+/*/////////// moviecard volatile /////////////*/
+.movieCard--volatile {
+  visibility: hidden;
+}
+
+
+.movieCard--volatile:hover{
+  visibility:visible;
+  background-color: rgba(0,0,0,0.5);
+  height:32.11vh;
+  overflow-y:hidden
+
+}
+.movieCard--infos{
+  margin-top:15px;
+  display:flex;
+  margin-left:13.6vw;
+  height:26vh;
+  justify-content: space-between;
+  overflow-y:hidden
+}
+.movieCard--infos--texty{
+  width:30%;
+  height:52vh;
+  color:#ecf0f1;
+  overflow-y:hidden
+}
+.movieCard--infos--texty--description{
+  font-size:20px;
+  text-align: center;
+  overflow-y:hidden
+
+}
+.movieCard--infos--rest{
+  padding-top:10px;
+  margin-top:30px;
+  width:30%;
+  font-size:24px;
+  text-align:center;
+  
+}
+
+.movieCard--torrents
+{text-align:center;
+  list-style:none;
+  text-decoration:none;
+  line-height: 2;
+  width:30%;
+  font-size:30px
+}
+
+
+/* form */
+
+
+form {
+  position: fixed;
+  z-index: 999;
+  height: 100vh;
+  width: 13vw;
+  background:#150C21;
+  opacity:0.9;
+  resize: both;
+  display:flex;
+  flex-direction:column;
+  top:0;
+  z-index:999;
+  left:0;
+  
+
+}
+
+form p{
+  font-size:30px;
+}
+
+
+.search{
+  height:30px;
+  width:260px;
+  border:1px var(--cloud) solid;
+  font-weight:400;
+  font-size:22px;
+  color: var(--cloud);
+  border-radius:6px;
+  left:0;
+  margin-bottom:200px;
+  background:none;
+  margin-top:30px
+
+}
+
+.genre{
+  width:250px;
+  height:30px;
+  border:var(--cloud) 2px solid;
+  border-radius:6px;
+  font-size:20px;
+  background:none;
+}
+
+.is3D{
+  padding-top:5px;
+  width:20px;
+  height:30px;
+  margin-left:10px;
+  background-color:
+}
+.just3dlabel{
+  font-size:30px;
+}
+
+.IMDB{
+  height:30px;
+  width:250px;
+  font-size:20px;
+  border:2px var(--cloud) solid ;
+  border-radius:6px;
+  color:var(--cloud);
+  background:none
+}
+
+.order_by{
+  height:30px;
+  width:250px;
+  font-size:20px;
+  border:2px var(--cloud) solid ;
+  border-radius:6px;
+  color:var(--cloud);
+  background:none
+}
